@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :require_login
 
   def create
     current_user.like(shout)
@@ -12,6 +13,6 @@ class LikesController < ApplicationController
   private
 
   def shout
-    @_shout ||= Shout.find(params[:id])
+    @shout ||= Shout.find(params[:id])
   end
 end
