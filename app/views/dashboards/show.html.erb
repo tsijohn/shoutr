@@ -11,7 +11,6 @@
 
 <%= form_for @shout do |form| %>
   <%= form.hidden_field :content_type, value: "PhotoShout" %>
-
   <%= form.fields_for :content do |content_form| %>
     <%= content_form.file_field :image, required: true %>
     <%= content_form.submit "Shout!" %>
